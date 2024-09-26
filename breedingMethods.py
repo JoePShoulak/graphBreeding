@@ -1,7 +1,9 @@
-def breedEasy(graphA, graphB):
-  graphC = "0"*26 # null values we know have to be replaced
+from helper import *
 
-  while graphC.count("0"): # while he have values to be replaced...
+def breedEasy(graphA, graphB):
+  graphC = " "*26 # null values we know have to be replaced
+
+  while graphC.count(" "): # while he have values to be replaced...
     foundOption = False
 
     for i in range(len(graphC)):
@@ -28,13 +30,11 @@ def breedEasy(graphA, graphB):
   
   return graphC
 
-from helper import *
-
 def breedHard(graphA, graphB):
-  graphC = "0"*26 # null values we know have to be replaced
+  graphC = " "*26 # null values we know have to be replaced
   index, selection = 0, "a"
 
-  while graphC.count("0"): # while he have values to be replaced...
+  while graphC.count(" "): # while he have values to be replaced...
     print(f"Letter {selection} (index {index}):")
     print(f"  Option A: {graphA[index]}")
     print(f"  Option B: {graphB[index]}")
@@ -52,7 +52,7 @@ def breedHard(graphA, graphB):
       index = ord(selection) - 97
     else: # if we can't follow that choice, iterate over all replaceable slots
       foundOption = False
-      options = find(graphC, "0")
+      options = find(graphC, " ")
       letters = list(map(lambda i: alphabet[i], options))
       print(f"Selection already in graph, trying new positions from {options} ({letters})")
 

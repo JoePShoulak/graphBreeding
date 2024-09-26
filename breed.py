@@ -5,6 +5,7 @@ from breedingMethods import *
 
 if len(argv) < 2:
   print("pick a breeding method: [easy|hard]")
+  print("tries can also be specified: [method] <tries>")
   exit()
 
 methodName = argv[1]
