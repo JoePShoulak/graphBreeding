@@ -16,4 +16,4 @@ if not ["easy", "hard"].count(methodName):
 
 tries = int(argv[2]) if len(argv) == 3 and argv[2].isnumeric() else 1000
 
-runFullTest(tries, breedEasy if methodName == "easy" else breedHard)
+runTest(tries, breedEasy if methodName == "easy" else breedHard)

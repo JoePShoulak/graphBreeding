@@ -66,10 +66,6 @@ def breedHard(graphA, graphB):
 
       if not foundOption:
         # if none of the remaining options have valid choices, quit
-        # we could maybe take all the leftover options, shuffle them,
-        # and create a cycle out of them.
-        # then we at least end up with a valid graph at the end,
-        # as close as we can to being from the parents
         missingLetters = []
         for ch in alphabet:
           if graphC.count(ch) == 0:
@@ -77,6 +73,9 @@ def breedHard(graphA, graphB):
 
         print(f"No options left with valid choices. Missing letters {missingLetters}.")
         print(f"Graph C is: {graphC}")
+
+        # Here we would fill in missing parts of the graph, if we want to
+
         return graphC
   
   return graphC
