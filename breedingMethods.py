@@ -10,8 +10,8 @@ def breedEasy(graphA, graphB):
     for i in range(len(graphC)):
       pathA, pathB = graphA[i], graphB[i]
 
-      if graphC.count(pathA) * graphC.count(pathB): # if the count of both are non-zero
-        continue
+      if graphC.count(pathA) * graphC.count(pathB): # if the count of both paths are non-zero
+        continue # skip and hope we find another before giving up
 
       foundOption = True
 
