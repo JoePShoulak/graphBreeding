@@ -1,5 +1,5 @@
 import random
-import matplotlib.pyplot as plt # type: ignore
+import matplotlib.pyplot as plt
 
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 
