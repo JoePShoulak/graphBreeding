@@ -1,6 +1,6 @@
 from sys import argv
 
-from helper import *
+from helper import runTest
 from breedingMethods import *
 
 if len(argv) < 2:

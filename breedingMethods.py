@@ -1,4 +1,5 @@
-from helper import *
+from random import randint
+from helper import find, alphabet
 
 def breedEasy(graphA, graphB):
   graphC = " "*26 # null values we know have to be replaced
@@ -7,25 +8,24 @@ def breedEasy(graphA, graphB):
     foundOption = False
 
     for i in range(len(graphC)):
-      optA, optB = graphA[i], graphB[i]
+      pathA, pathB = graphA[i], graphB[i]
 
-      if graphC.count(optA) * graphC.count(optB) > 0:
-        continue # if both options are already in the graph, skip
+      if graphC.count(pathA) * graphC.count(pathB): # if the count of both are non-zero
+        continue
 
       foundOption = True
 
       graphC = list(graphC)
 
-      if graphC.count(optA) * graphC.count(optB) == 0:
-        graphC[i] = optA if random.randint(0,1) else optB
+      if not graphC.count(pathA) + graphC.count(pathB): # if the count of both are zero
+        graphC[i] = pathA if randint(0,1) else pathB
       else:
-        graphC[i] = optA if graphC.count(optA) == 0 else optB
+        graphC[i] = pathB if graphC.count(pathA) else pathB
 
       graphC = "".join(graphC)
 
     if not foundOption:
-      # Here we would fill in blanks if any are remaining,
-      # but they have yet to be found
+      # Here we would fill in missing parts of the graph, if we want to
       return graphC
   
   return graphC
@@ -40,7 +40,7 @@ def breedHard(graphA, graphB):
     print(f"  Option B: {graphB[index]}")
 
     # get a random path forward from one of the parents
-    selection = graphA[index] if random.randint(0,1) else graphB[index]
+    selection = graphA[index] if randint(0,1) else graphB[index]
     print(f"  Selection: {selection}")
 
     # if that letter hasn't been in our graph yet, add it and update our index
