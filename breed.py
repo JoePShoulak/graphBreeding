@@ -1,5 +1,4 @@
 from sys import argv
-
 from helper import runTest
 from breedingMethods import *
 
